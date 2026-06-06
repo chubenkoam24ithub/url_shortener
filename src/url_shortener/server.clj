@@ -42,5 +42,6 @@
 
 (defn start-server [port]
   (db/init-db)
-  (println "Сервер запущен на порту" port)
-  (run-jetty app {:port port :join? false}))
+  (println "Сервер запущен на порту" port "на хосте 0.0.0.0")
+  ;; Добавляем параметр :host "0.0.0.0" в карту настроек
+  (run-jetty app {:port port :host "0.0.0.0" :join? false}))
