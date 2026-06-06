@@ -11,7 +11,7 @@ RUN lein deps
 RUN lein uberjar
 
 # Этап 2: Запуск (используем легкий образ Java для экономии памяти)
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Копируем только готовый JAR-файл из предыдущего этапа
